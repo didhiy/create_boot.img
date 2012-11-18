@@ -1,16 +1,19 @@
-How To properly package a boot.img for MTD support on Epic 4G (SPH-D700).
+How To properly package a boot.img for CM10 on Epic 4G (SPH-D700).
 
-1 - Build a kernel using the included stage1 initramfs (initramfs_stage1).
-2 - Copy the zImage to your working directory.
+For native epic 4g radio/modem:
+1 - Make any desired changes to the initramfs files in initramfs_er.
+2 - Run the create_boot.img.sh script with the "er" arg.
+    "./create_boot.img.sh er"
 
-For CM7 / MIUI:
-3 - Make any desired changes to the initramfs files in initramfs_cm7.
-4 - Run the create_boot.img.sh script with the cm arg.
-    "./create_boot.img.sh cm"
+For crespo/nexus s 4g radio/modem:
+<Credit & Source>
+https://github.com/bbelos/android_device_samsung_epicmtd/commits/crespo-modem
+https://github.com/xboxfanj/android_kernel_samsung_victory/commit/7f00332811efeb39e98e17c02d1d67e278dddd01
+1 - Make any desired changes to the initramfs files in initramfs_nr.
+2 - Run the create_boot.img.sh script with the nr arg.
+    "./create_boot.img.sh nr"
 
-For TouchWiz:
-3 - Make any desired changes to the initramfs files in initramfs_tw.
-4 - Run the create_boot.img.sh script with the tw arg.
-    "./create_boot.img.sh tw"
+3 - Create a flashable zip to install the newly created boot.img.
 
-5 - Create a flashable zip to install the newly created boot.img.
+TWRP Recovery for Epic 4G
+http://forum.xda-developers.com/showthread.php?t=1622947

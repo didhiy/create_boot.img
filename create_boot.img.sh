@@ -9,9 +9,9 @@
 
 #defines
 KERNEL_PATH="$PWD/zImage"
-RECOVERY_INITRD="$PWD/initramfs_cwm"
-#default to cm
-KERNEL_INITRD="$PWD/initramfs_cm"
+RECOVERY_INITRD="$PWD/initramfs_twrp"
+#default to er
+KERNEL_INITRD="$PWD/initramfs_er"
 
 #function
 function PACKAGE_BOOTIMG()
@@ -49,12 +49,12 @@ function PACKAGE_BOOTIMG()
 }
 
 #main
-if [ "$1" = "tw" ]; then
-	KERNEL_INITRD="$PWD/initramfs_tw"
-elif [ "$1" = "cm" ]; then
-	KERNEL_INITRD="$PWD/initramfs_cm7"
+if [ "$1" = "er" ]; then
+	KERNEL_INITRD="$PWD/initramfs_er"
+elif [ "$1" = "nr" ]; then
+	KERNEL_INITRD="$PWD/initramfs_nr"
 else
-	echo "usage: $0 <tw|cm>"
+	echo "usage: $0 <er|nr>"
 	exit
 fi
 
